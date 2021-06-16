@@ -6,8 +6,8 @@ The `.github/workflows/production.yml` script is specifically for a React app (u
 
 Includes React-based environment variables `process.env.REACT_APP_API` to connect to an API service as an example.  
 
-Environment variables must exist in GitHub Secrets.  AWS IAM permission will need to have `AmazonS3FullAccess` permissions enabled to work.  
+Environment variables must exist in GitHub Secrets.  AWS IAM permission for `AWS_ACCESS_KEY_ID` needs to have `AmazonS3FullAccess` permissions enabled to work.  
 
-This script uploads all asset files before uploading the `index.html` file.
+This script uploads all asset files before uploading the `index.html` file.  
 
 ![GitHub Secrets must exist](https://www.aaronwht.com/images/tutorial/github-secrets.png)  
