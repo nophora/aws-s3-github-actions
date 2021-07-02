@@ -6,9 +6,9 @@ The `.github/workflows/production.yml` script is specifically designed for a Rea
 
 Includes React-based environment variables `process.env.REACT_APP_API` to connect to an API service as an example.
 
-Environment variables must exist in GitHub Secrets. AWS IAM permission for `AWS_ACCESS_KEY_ID` needs to have `AmazonS3FullAccess` permissions enabled to work.
+Environment variables must exist in GitHub Secrets.
 
-AWS IAM role with permissions required to invalidate CloudFront Cache, example below:
+AWS IAM permission for `AWS_ACCESS_KEY_ID` needs to have `AmazonS3FullAccess` enabled, along with a custom policy (example below) to invalide a CloudFront Cache:
 
 ```
 {
