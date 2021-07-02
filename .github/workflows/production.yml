@@ -40,7 +40,7 @@ jobs:
           AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
           AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
           AWS_REGION: ${{ secrets.AWS_REGION }}
-          SOURCE_DIR: 'build'
+          SOURCE_DIR: "build"
 
       - name: Deploy index to S3
         uses: jakejarvis/s3-sync-action@master
@@ -51,4 +51,13 @@ jobs:
           AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
           AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
           AWS_REGION: ${{ secrets.AWS_REGION }}
-          SOURCE_DIR: 'build'
+          SOURCE_DIR: "build"
+
+      - name: Invalidate /index.html page in CloudFront Cache
+        uses: chetan/invalidate-cloudfront-action@master
+        env:
+          DISTRIBUTION: ${{ secrets.DISTRIBUTION }}
+          PATHS: "/index.html"
+          AWS_REGION: ${{ secrets.AWS_REGION }}
+          AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
