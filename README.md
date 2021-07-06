@@ -10,7 +10,7 @@ Includes React-based environment variables `process.env.REACT_APP_API` to connec
 
 Environment variables must exist in GitHub Secrets.
 
-AWS IAM permission for `AWS_ACCESS_KEY_ID` needs to have `AmazonS3FullAccess` enabled, along with a custom policy (example below) to invalide a CloudFront Cache:
+AWS IAM permission for `AWS_ACCESS_KEY_ID` needs to have `AmazonS3FullAccess` enabled, along with a custom policy (example below) to invalidate a CloudFront Cache:
 
 ```
 {
